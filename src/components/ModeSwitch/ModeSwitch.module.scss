@@ -1,0 +1,29 @@
+@import '../../scss/values.scss';
+
+.modeSwitch {
+  background-color: $grey-2;
+  border-radius: $numpadBorderRadius;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+  color: $black-3;
+  display: flex;
+  justify-content: space-between;
+  height: 38px;
+}
+
+.mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 50%;
+  height: 36px;
+}
+
+.activeMode {
+  background-color: white;
+  border-radius: $numpadBorderRadius;
+  border: $numpadBorder;
+  
+}

@@ -1,0 +1,17 @@
+@import '../../../scss/values.scss';
+
+.actions {
+  padding: $numpadPadding;
+  display: grid;
+  grid-template-columns: repeat(4, 52px);
+  gap: $numpadGap;
+  border: $numpadBorder;
+  border-radius: $numpadBorderRadius;
+  height: 56px;
+  box-sizing: border-box;
+  box-shadow: $numpadShadow;
+}
+
+.insideConstructor {
+  opacity: 50%;
+}

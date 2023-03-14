@@ -1,0 +1,28 @@
+@import './../../../scss/values.scss';
+
+.line {
+  height: 0px;
+  width: 244px;
+  display: flex;
+  align-items: center;
+  
+  &:first-child {
+    margin: 0 0 4px;
+  }
+
+  &:last-child {
+    margin: 4px 0 0;
+  }
+}
+
+.center {
+  border: 1px solid $purple;
+  width: 244px;
+}
+
+.cube {
+  height: 0px;
+  width: 0px;
+  border: 2px solid $purple;
+  transform: rotate(45deg);
+}

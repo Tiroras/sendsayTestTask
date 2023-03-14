@@ -1,0 +1,33 @@
+@import '../../../scss/values.scss';
+
+.hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 127px;
+}
+
+.explanation {
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hintAction {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  color: $purple;
+}
+
+.hintExtra {
+  color: $grey-4;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 4px 0 0;
+}
+
+.dropPlace {
+  background-color: $lightBlue;
+}

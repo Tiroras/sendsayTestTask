@@ -1,0 +1,30 @@
+@import '../../../scss/values.scss';
+
+.numpad {
+  display: grid;
+  grid-template-rows: 160px 52px;
+  gap: $numpadGap;
+  border-radius: $numpadBorderRadius;
+  border: $numpadBorder;
+  padding: $numpadPadding;
+  height: 224px;
+  box-sizing: border-box;
+  box-shadow: $numpadShadow;
+}
+
+.mainNums {
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  grid-template-rows: repeat(3, 48px);
+  gap: $numpadGap;
+}
+
+.extraNums {
+  display: grid;
+  grid-template-columns: 152px 72px;
+  gap: $numpadGap;
+}
+
+.insideConstructor {
+  opacity: 50%;
+}

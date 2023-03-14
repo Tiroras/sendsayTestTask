@@ -1,0 +1,23 @@
+@import '../../../scss/values.scss';
+
+.wrapper {
+  padding: $numpadPadding;
+  border: $numpadBorder;
+  border-radius: $numpadBorderRadius;
+  box-shadow: $numpadShadow;
+  display: flex;
+  justify-content: center;
+}
+
+.calculate {
+  border: none;
+  background-color: $purple;
+  border-radius: $numpadBorderRadius;
+  color: $white;
+  padding: 24px 111px;
+  cursor: pointer;
+}
+
+.insideConstructor {
+  opacity: 50%;
+}

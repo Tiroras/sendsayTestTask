@@ -1,0 +1,26 @@
+@import '../../../scss/values.scss';
+
+.wrapper {
+  padding: $numpadPadding;
+  border: $numpadBorder;
+  border-radius: $numpadBorderRadius;
+  box-shadow: $numpadShadow;
+}
+
+.result {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 44px;
+  text-align: right;
+  color: $black-2;
+  background-color: $grey-2;
+  padding: $numpadPadding;
+  max-width: 232px;
+  max-height: 52px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.insideConstructor {
+  opacity: 50%;
+}

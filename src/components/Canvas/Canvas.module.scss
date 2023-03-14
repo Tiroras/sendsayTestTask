@@ -1,0 +1,19 @@
+@import '../../scss/values.scss';
+
+.canvas {
+  height: 448px;
+  width: 243px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 0;
+  box-sizing: border-box;
+}
+
+.emptyList {
+  border: 2px dashed $grey-3;
+}
+
+.dropPlace {
+  background-color: $lightBlue;
+}
