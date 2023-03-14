@@ -1,1 +1,1 @@
-export { ModeSwitch } from "./ModeSwitch";
+export { ModeSwitch } from './ModeSwitch'
