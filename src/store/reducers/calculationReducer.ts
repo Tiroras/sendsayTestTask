@@ -3,7 +3,8 @@ import {
   type PayloadAction
 } from '@reduxjs/toolkit'
 import { numbers, type NumbersType, operations, type OperationsType, type NumberType, type OperationType } from '../../types'
-import { calculate, prepareCalculationResult } from '../../utils/calculate'
+import { prepareCalculationResult } from '../../utils/calculate'
+import { constructorSlice } from './constructorReducer'
 
 export interface CalculationState {
   calculation: string
@@ -64,9 +65,15 @@ export const calculationSlice = createSlice({
       if (arr.length === 3) {
         if (arr.at(-1) === '0') {
           state.calculation = 'Не определенно'
+        } else {
+          state.calculation = prepareCalculationResult(arr)
         }
-        state.calculation = prepareCalculationResult(arr)
       }
     }
+  },
+  extraReducers (builder) {
+    builder.addCase(constructorSlice.actions.changeMode, (state) => {
+      state.calculation = ''
+    })
   }
 })
