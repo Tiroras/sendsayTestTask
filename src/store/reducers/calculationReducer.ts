@@ -3,7 +3,7 @@ import {
   type PayloadAction
 } from '@reduxjs/toolkit'
 import { numbers, type NumbersType, operations, type OperationsType, type NumberType, type OperationType } from '../../types'
-import { calculate } from '../../utils/calculate'
+import { calculate, prepareCalculationResult } from '../../utils/calculate'
 
 export interface CalculationState {
   calculation: string
@@ -22,7 +22,17 @@ export const calculationSlice = createSlice({
   initialState,
   reducers: {
     inputNumbers (state, action: PayloadAction<NumberType>) {
-      state.calculation += action.payload
+      const calcArr = state.calculation.split(' ')
+      // Если ничего не введено, и вводим запятую,
+      // то перед запятой вставляем ноль
+      if (action.payload === ',' && calcArr.at(-1)?.length === 0) {
+        state.calculation += '0,'
+      } else if (
+        !(action.payload === '0' && calcArr.at(-1)?.at(0) === '0') &&
+        !(action.payload === ',' && calcArr.at(-1)?.includes(action.payload))
+      ) {
+        state.calculation += action.payload
+      }
     },
     inputOperation (state, action: PayloadAction<OperationType>) {
       // Если уже введено два числа и операция,
@@ -31,7 +41,7 @@ export const calculationSlice = createSlice({
       if (state.calculation.split(' ').length === 3) {
         const arr = state.calculation.split(' ')
 
-        state.calculation = calculate(arr) + ' ' + action.payload + ' '
+        state.calculation = prepareCalculationResult(arr) + ' ' + action.payload + ' '
 
         // Если нажимаем на кнопку операции, когда не введено
         // какое либо число - ставим в лево число 0
@@ -52,7 +62,10 @@ export const calculationSlice = createSlice({
     solve (state) {
       const arr = state.calculation.split(' ')
       if (arr.length === 3) {
-        state.calculation = calculate(arr)
+        if (arr.at(-1) === '0') {
+          state.calculation = 'Не определенно'
+        }
+        state.calculation = prepareCalculationResult(arr)
       }
     }
   }

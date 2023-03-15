@@ -5,6 +5,7 @@
   border: $numpadBorder;
   border-radius: $numpadBorderRadius;
   box-shadow: $numpadShadow;
+  height: 60px;
 }
 
 .result {
@@ -16,9 +17,13 @@
   background-color: $grey-2;
   padding: $numpadPadding;
   max-width: 232px;
-  max-height: 52px;
+  height: 52px;
   overflow-x: auto;
   overflow-y: hidden;
+}
+
+.smallFontSize {
+  font-size: 24px;
 }
 
 .insideConstructor {

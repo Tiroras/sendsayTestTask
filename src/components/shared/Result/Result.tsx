@@ -20,7 +20,9 @@ export const Result: React.FC<ConstructorElementProps> =
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
       >
-        <div className={styles.result}>{calculation || 0}</div>
+        <div
+          className={cn(styles.result, calculation.length > 10 && styles.smallFontSize)}
+        >{calculation || 0}</div>
       </div>
     )
   }
